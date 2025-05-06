@@ -14,7 +14,7 @@
     font-weight: 400;
   }
   </style>
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=reCAPTCHA_site_key" async defer></script>
   <script>
     function onSubmit(token) {
       document.getElementById("demo-form").submit();
@@ -40,10 +40,8 @@
               <button class="g-recaptcha" 
                       data-sitekey="6LeuTTArAAAAAB9ITNhvRRyfXob2H6-smAxRQLjW" 
                       data-callback='onSubmit' 
-                      data-action='submit'>Submit</button>
-              <!--button type="button" id="sendForm" class="send-button">Enviar</-button>
-              <div class="g-recaptcha" data-sitekey="6LeuTTArAAAAAB9ITNhvRRyfXob2H6-smAxRQLjW"></div-->
-            </div>
+                      data-action='submit'>Enviar</button>
+              </div>
           </form>
           </div>
       </section>
