@@ -234,4 +234,9 @@ input[type="email"]:focus, input[type="tel"]:focus, textarea:focus {
     flex-direction: column;
     height: auto; /* Adjust height for stacked content */
   }
+
+  .home-top-row a {
+    font-size: 11px; /* Adjust font size for smaller screens */
+    padding: .5rem; /* Adjust padding for smaller screens */
+  }
 }
