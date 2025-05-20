@@ -226,7 +226,7 @@ input[type="email"]:focus, input[type="tel"]:focus, textarea:focus {
 }
 
 /* Media query for screens smaller than 768px */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .home-wrapper {
     /* Change from flexbox to block layout for a single column */
     display: block;
