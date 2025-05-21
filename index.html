@@ -14,12 +14,6 @@
     font-weight: 400;
   }
   </style>
-    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LeuTTArAAAAAB9ITNhvRRyfXob2H6-smAxRQLjW"></script>
-  <script>
-    function onSubmit(token) {
-      document.getElementById("demo-form").submit();
-    }
-  </script>
 </head>
 <body>
   <div id="backgroundOverlay" class="hidden">
@@ -37,9 +31,8 @@
               <input type="email" id="correo" name="correo" required> <br>
               <label for="mensaje">Mensaje:</label> <br>
               <textarea id="mensaje" name="mensaje" required></textarea> <br>
-              <button class="g-recaptcha" 
-                      data-sitekey="6LeuTTArAAAAAB9ITNhvRRyfXob2H6-smAxRQLjW" 
-                      data-callback='onSubmit' 
+              <div class="g-recaptcha" data-sitekey="6LeuTTArAAAAAB9ITNhvRRyfXob2H6-smAxRQLjW"></div>
+              <button data-callback='onSubmit' 
                       data-action='submit'
                       name="submit">Enviar</button>
               </div>
