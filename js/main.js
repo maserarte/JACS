@@ -21,6 +21,8 @@ function main() {
           toggleFormVisibility();
       });
   
+
+      
       const hideForm = () => {
           backgroundOverlay.style.display = "none";
           isFormVisible = false;
