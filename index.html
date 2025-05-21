@@ -44,42 +44,43 @@
                       name="submit">Enviar</button>
               </div>
           </form>
-        </div>
-<?php
-          if(isset($_POST['submit']))
-          {
-            $nombre = $_POST['nombre'];
-            $correo = $_POST['correo'];
-            $mensaje = $_POST['mensaje'];
+          <div class="status">
+            <?php
+              if(isset($_POST['submit']))
+              {
+                $nombre = $_POST['nombre'];
+                $correo = $_POST['correo'];
+                $mensaje = $_POST['mensaje'];
 
-            $email_from = 'noreply@portafoliojuan';
-            $email_subject = 'Nuevo mensaje de contacto';
-            $email_body = "Nombre: $nombre\n".
-                          "Correo: $correo\n".
-                          "Mensaje: $mensaje\n";
+                $email_from = 'noreply@portafoliojuan.com';
+                $email_subject = 'Nuevo mensaje de contacto';
+                $email_body = "Nombre: $nombre\n".
+                              "Correo: $correo\n".
+                              "Mensaje: $mensaje\n";
 
-            $to_email = 'juan.designer@gmail.com';
-            $headers = "From: $email_from\r\n";
-            $headers .= "Reply-To: $correo\r\n";
+                $to_email = 'juan.designer@gmail.com';
+                $headers = "From: $email_from\r\n";
+                $headers .= "Reply-To: $correo\r\n";
 
-            $secretKey = "6LeuTTArAAAAAAg2Bb8b26TbtDwY4cw8RgUNdAw7";
-            $responseKey = $_POST['g-recaptcha-response'];
-            $userIP = $_SERVER['REMOTE_ADDR'];
-            $url = "https://recaptchaenterprise.googleapis.com/v1/projects/adept-chemist-378119/assessments?key=$secretKey";
-            $response = file_get_contents($url);
-            $responseKeys = json_decode($response, true);
-            
-            if(isset($responseKeys['success']) && $responseKeys['success'])
-            {
-              mail($to_email, $email_subject, $email_body, $headers);
-              echo "Gracias, $nombre. Tu mensaje ha sido enviado.";
-            }
-            else
-            {
-              echo "Error: No se pudo enviar el mensaje. Por favor, inténtalo de nuevo.";
-            }
-          }
-?>
+                $secretKey = "6LeuTTArAAAAAAg2Bb8b26TbtDwY4cw8RgUNdAw7";
+                $responseKey = $_POST['g-recaptcha-response'];
+                $userIP = $_SERVER['REMOTE_ADDR'];
+                $url = "https://recaptchaenterprise.googleapis.com/v1/projects/adept-chemist-378119/assessments?key=$secretKey";
+                $response = file_get_contents($url);
+                $responseKeys = json_decode($response, true);
+                
+                if(isset($responseKeys['success']) && $responseKeys['success'])
+                {
+                  mail($to_email, $email_subject, $email_body, $headers);
+                  echo "Gracias, $nombre. Tu mensaje ha sido enviado.";
+                }
+                else
+                {
+                  echo "Error: No se pudo enviar el mensaje. Por favor, inténtalo de nuevo.";
+                }
+              }
+            ?>
+          </div>
         </div>
       </section>
     </div>
