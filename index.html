@@ -40,12 +40,12 @@
               <button class="g-recaptcha" 
                       data-sitekey="6LeuTTArAAAAAB9ITNhvRRyfXob2H6-smAxRQLjW" 
                       data-callback='onSubmit' 
-                      data-action='submit'>Enviar</button>
+                      data-action='submit'
+                      name="submit">Enviar</button>
               </div>
           </form>
         </div>
-        <div class="status">
-          <?php
+<?php
           if(isset($_POST['submit']))
           {
             $nombre = $_POST['nombre'];
@@ -68,18 +68,18 @@
             $url = "https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$responseKey&remoteip=$userIP";
             $response = file_get_contents($url);
             $responseKeys = json_decode($response, true);
-            if($response->success)
+            
+            if(isset($responseKeys['success']) && $responseKeys['success'])
             {
               mail($to_email, $email_subject, $email_body, $headers);
-              echo "<p>Gracias, $nombre. Tu mensaje ha sido enviado.</p>";
+              echo "Gracias, $nombre. Tu mensaje ha sido enviado.";
             }
             else
             {
-              echo "<p>Error: No se pudo enviar el mensaje. Por favor, inténtalo de nuevo.</p>";
+              echo "Error: No se pudo enviar el mensaje. Por favor, inténtalo de nuevo.";
             }
-            echo "<p>Gracias, $nombre. Tu mensaje ha sido enviado.</p>";
           }
-          ?>
+?>
         </div>
       </section>
     </div>
