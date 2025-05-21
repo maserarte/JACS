@@ -65,7 +65,7 @@
             $secretKey = "6LeuTTArAAAAAAg2Bb8b26TbtDwY4cw8RgUNdAw7";
             $responseKey = $_POST['g-recaptcha-response'];
             $userIP = $_SERVER['REMOTE_ADDR'];
-            $url = "https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$responseKey&remoteip=$userIP";
+            $url = "https://recaptchaenterprise.googleapis.com/v1/projects/adept-chemist-378119/assessments?key=$secretKey";
             $response = file_get_contents($url);
             $responseKeys = json_decode($response, true);
             
