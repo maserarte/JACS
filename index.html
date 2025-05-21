@@ -14,15 +14,10 @@
     font-weight: 400;
   }
   </style>
-    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LeuTTArAAAAAB9ITNhvRRyfXob2H6-smAxRQLjW"></script>
-  <script>
-    function onSubmit(token) {
-      document.getElementById("demo-form").submit();
-    }
-  </script>
+   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
-  <div id="backgroundOverlay" class="hidden">
+  <!--div id="backgroundOverlay" class="hidden">
     <div id="formContacto">
       <section id="contactForm" class="contact-form hidden">
         <div class="close-button-form">
@@ -37,54 +32,16 @@
               <input type="email" id="correo" name="correo" required> <br>
               <label for="mensaje">Mensaje:</label> <br>
               <textarea id="mensaje" name="mensaje" required></textarea> <br>
-              <button class="g-recaptcha" 
-                      data-sitekey="6LeuTTArAAAAAB9ITNhvRRyfXob2H6-smAxRQLjW" 
-                      data-callback='onSubmit' 
+              <div class="g-recaptcha" data-sitekey="6LeuTTArAAAAAB9ITNhvRRyfXob2H6-smAxRQLjW"></div>
+              <button data-callback='onSubmit' 
                       data-action='submit'
                       name="submit">Enviar</button>
               </div>
           </form>
-          <div class="status">
-            <?php
-              if(isset($_POST['submit']))
-              {
-                $nombre = $_POST['nombre'];
-                $correo = $_POST['correo'];
-                $mensaje = $_POST['mensaje'];
-
-                $email_from = 'noreply@portafoliojuan.com';
-                $email_subject = 'Nuevo mensaje de contacto';
-                $email_body = "Nombre: $nombre\n".
-                              "Correo: $correo\n".
-                              "Mensaje: $mensaje\n";
-
-                $to_email = 'juan.designer@gmail.com';
-                $headers = "From: $email_from\r\n";
-                $headers .= "Reply-To: $correo\r\n";
-
-                $secretKey = "6LeuTTArAAAAAAg2Bb8b26TbtDwY4cw8RgUNdAw7";
-                $responseKey = $_POST['g-recaptcha-response'];
-                $userIP = $_SERVER['REMOTE_ADDR'];
-                $url = "https://recaptchaenterprise.googleapis.com/v1/projects/adept-chemist-378119/assessments?key=$secretKey";
-                $response = file_get_contents($url);
-                $responseKeys = json_decode($response, true);
-                
-                if(isset($responseKeys['success']) && $responseKeys['success'])
-                {
-                  mail($to_email, $email_subject, $email_body, $headers);
-                  echo "Gracias, $nombre. Tu mensaje ha sido enviado.";
-                }
-                else
-                {
-                  echo "Error: No se pudo enviar el mensaje. Por favor, inténtalo de nuevo.";
-                }
-              }
-            ?>
-          </div>
         </div>
       </section>
     </div>
-  </div>
+  </div-->
   <main class="card-container">
     <div class="home-top-row">
       <div class="home-top-row-left">
@@ -92,7 +49,7 @@
       </div>
       <div class="home-top-row-right">
         <a id="Descargar" href="img/JuanAlbertoCruzSantillan.pdf" target="_blank">Descargar CV</a>
-        <a id="contactoLink" href="">Contacto</a>
+        <!--a id="contactoLink" href="">Contacto</a-->
       </div>
     </div>
     <section class="home-wrapper">
