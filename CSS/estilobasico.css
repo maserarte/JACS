@@ -48,7 +48,7 @@ h1{
   margin-inline-end: 0px;
 }
 
-.home-top-row a{
+.home-top-row a, button{
   text-decoration: none;
   color: #ffffff;
   font-family: var(--din);
@@ -166,31 +166,6 @@ section{
   background-color: white;
   width: 500px;
   padding: 5% 1%;
-}
-
-.send-button, button {
-  background-color: red;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-button {
-  font-family: var(--din);
-  font-size: 1.2rem;
-  font-weight: 600;
-  padding: .5rem;
-  border-radius: .5rem;
-}
-
-button:hover {
-  color: #000000;
-  transition: all .3s ease-in-out;
-}
-
-.close-button {
-  display: none;
 }
 
 #backgroundOverlay {

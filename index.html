@@ -17,31 +17,6 @@
    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
-  <!--div id="backgroundOverlay" class="hidden">
-    <div id="formContacto">
-      <section id="contactForm" class="contact-form hidden">
-        <div class="close-button-form">
-          <button type="button" id="closeForm">X</button>
-        </div>
-        <div class="container-form">
-          <form id="demo-form">
-            <div>
-              <label for="nombre">Nombre:</label> <br>
-              <input type="text" id="nombre" name="nombre" required> <br>
-              <label for="correo">Correo electrónico:</label> <br>
-              <input type="email" id="correo" name="correo" required> <br>
-              <label for="mensaje">Mensaje:</label> <br>
-              <textarea id="mensaje" name="mensaje" required></textarea> <br>
-              <div class="g-recaptcha" data-sitekey="6LeuTTArAAAAAB9ITNhvRRyfXob2H6-smAxRQLjW"></div>
-              <button data-callback='onSubmit' 
-                      data-action='submit'
-                      name="submit">Enviar</button>
-              </div>
-          </form>
-        </div>
-      </section>
-    </div>
-  </div-->
   <main class="card-container">
     <div class="home-top-row">
       <div class="home-top-row-left">
@@ -49,119 +24,119 @@
       </div>
       <div class="home-top-row-right">
         <a id="Descargar" href="img/JuanAlbertoCruzSantillan.pdf" target="_blank">Descargar CV</a>
-        <!--a id="contactoLink" href="">Contacto</a-->
+        <a id="language-switch" href="#">English</a>
       </div>
     </div>
     <section class="home-wrapper">
       <div class="column-wrapper">
         <div class="card">
-          <p>Soy un creativo al que le gusta hacer un poco de todo:
+          <p data-translate-key="introPortofolio1">Soy un creativo al que le gusta hacer un poco de todo:
             publicidad, diseño, código front-end, edición de video y
             producción de TV.</p>
-          <p>Me encanta crear historias visuales atractivas y ayudar a
+          <p data-translate-key="introPortofolio2">Me encanta crear historias visuales atractivas y ayudar a
             marcas o personas a conectar mejor con su audiencia.</p>
-          <p>Combino diseño y código para hacer webs interactivas y fáciles de
+          <p data-translate-key="introPortofolio3">Combino diseño y código para hacer webs interactivas y fáciles de
             usar.</p>
-          <p>También edito video y entiendo cómo llevar ideas a la
+          <p data-translate-key="introPortofolio4">También edito video y entiendo cómo llevar ideas a la
             pantalla.</p>
         </div>
         <div class="card">
-          <h3>Dando Voz a Hoteles NH: Creatividad Publicitaria con Esencia.</h3>
-          <img
+           <h3 data-translate-key="nhHotelesTitle">Dando Voz a Hoteles NH: Creatividad Publicitaria con Esencia.</h3>
+            <img
             src="img/NH.png"
             alt="Hoteles NH"
             onerror="this.onerror=null;this.src='images/placeholder.png';" />
-          <p>Se creó una campaña publicitaria memorable para Hoteles NH, capturando la esencia de su marca y conectando emocionalmente con sus huéspedes a través de un concepto innovador.</p>
+            <p data-translate-key="nhHotelesDescription">Se creó una campaña publicitaria memorable para Hoteles NH, capturando la esencia de su marca y conectando emocionalmente con sus huéspedes a través de un concepto innovador.</p>
         </div>
         <div class="card">
-          <h3>Sesiones, un programa reconocido por su propuesta artística y musical</h3>
+          <h3 data-translate-key="sesionesTitle">Sesiones, un programa reconocido por su propuesta artística y musical</h3>
           <img
-            src="img/sesiones.jpg"
-            alt="Sesiones"
-            onerror="this.onerror=null;this.src='images/placeholder.png';" />
-          <p>En Sesiones con Alejandro Franco, Formé parte del equipo de producción en videografía, edición de video y gestión digital, contribuyendo directamente a la experiencia visual y al alcance de la audiencia.</p>
+          src="img/sesiones.jpg"
+          alt="Sesiones"
+          onerror="this.onerror=null;this.src='img/placeholder.png';" />
+          <p data-translate-key="sesionesDescription">En Sesiones con Alejandro Franco, Formé parte del equipo de producción en videografía, edición de video y gestión digital, contribuyendo directamente a la experiencia visual y al alcance de la audiencia.</p>
         </div>
-          <div class="card">
-          <h3>Producción y Web para "Picnic"</h3>
-          <img
-            src="img/Picnic.png"
-            alt="Picnic"
-            onerror="this.onerror=null;this.src='images/placeholder.png';" />
-          <p>Contribuí en la producción del programa de televisión "Picnic", realizando la edición de video y gestionando la parte web asociada al show.</p>
+        <div class="card">
+            <h3 data-translate-key="picnicTitle">Producción y Web para "Picnic"</h3>
+            <img
+              src="img/Picnic.png"
+              alt="Picnic"
+              onerror="this.onerror=null;this.src='img/placeholder.png';" />
+           <p data-translate-key="picnicDescription">Contribuí en la producción del programa de televisión "Picnic", realizando la edición de video y gestionando la parte web asociada al show.</p>
         </div>
         <div class="card">
           <img
-            src="img/music.jpg"
-            alt="guitarra"
-            onerror="this.onerror=null;this.src='images/placeholder.png';" />
+          src="img/music.jpg"
+          alt="guitarra"
+          onerror="this.onerror=null;this.src='img/placeholder.png';" />
         </div>
         <div class="card">
-        <h3>Frontend Developer - Secretaría de la Función Pública</h3>
-        <img
-          src="img/SFP.png"
-          alt="SFP"
-          onerror="this.onerror=null;this.src='images/placeholder.png';" />
-        <p>Durante una década, me desempeñé como Frontend Developer en la SFP. Mis responsabilidades principales incluyeron la concepción de herramientas de desarrollo internas, la maquetación y programación de interfaces, y asegurar la aplicación correcta de la imagen institucional gubernamental en los sistemas.</p>
+          <h3 data-translate-key="sfpTitle">Frontend Developer - Secretaría de la Función Pública</h3>
+          <img
+            src="img/SFP.png"
+            alt="SFP"
+            onerror="this.onerror=null;this.src='img/placeholder.png';" />
+        <p data-translate-key="sfpDescription">Durante una década, me desempeñé como Frontend Developer en la SFP. Mis responsabilidades principales incluyeron la concepción de herramientas de desarrollo internas, la maquetación y programación de interfaces, y asegurar la aplicación correcta de la imagen institucional gubernamental en los sistemas.</p>
         </div>
       </div>
       <div class="column-wrapper">
         <div class="card">
-          <h3>Servicios</h3>
+          <h3 data-translate-key="serviceTitle">Servicios</h3>
           <ul>
-            <li>Diseño Gráfico</li>
-            <li>Desarrollo Web</li>
+            <li data-translate-key="serviceDescription1">Diseño Gráfico</li>
+            <li data-translate-key="serviceDescription2">Desarrollo Web</li>
             <li>UX/UI</li>
-            <li>Aplicaciones Móviles</li>
-            <li>Video/edición</li>
-            <li>Producción</li> 
+            <li data-translate-key="serviceDescription3">Aplicaciones Móviles</li>
+            <li data-translate-key="serviceDescription4">Video/edición</li>
+            <li data-translate-key="serviceDescription5">Producción</li> 
           </ul>
         </div>
         <div class="card">
-          <h3>Grupo Telefónica: Conectando Marcas a través de Eventos Estratégicos.</h3>
+          <h3 data-translate-key="telefonicaTitle">Grupo Telefónica: Conectando Marcas a través de Eventos Estratégicos.</h3>
           <img
-            src="img/telefonica.png"
-            alt="Telefonica"
-            onerror="this.onerror=null;this.src='images/placeholder.png';" />
-          <p>Se diseñó y produjó eventos clave, creando el escenario perfecto para la presentación de sus patrocinios y el fortalecimiento de alianzas estratégicas.</p>
+          src="img/telefonica.png"
+          alt="Telefonica"
+          onerror="this.onerror=null;this.src='img/placeholder.png';" />
+          <p data-translate-key="telefonicaDescription">Se diseñó y produjó eventos clave, creando el escenario perfecto para la presentación de sus patrocinios y el fortalecimiento de alianzas estratégicas.</p>
         </div>
         <div class="card">  
-          <img src="img/contacto.jpg" 
-          alt="Contacto" 
-          onerror="this.onerror=null;this.src='images/placeholder.png';" />
+          <img src="img/contacto.jpg"
+          alt="Contacto"
+          onerror="this.onerror=null;this.src='img/placeholder.png';" />
         </div>
         <div class="card">
-          <h3>Amadeus: Impulso Creativo y Soporte Total</h3>
-          <img src="img/Amadeus1.png" alt="Amadeus" onerror="this.onerror=null;this.src='images/placeholder.png';" />
-          <p>Su aliado 360°. Integramos publicidad, marketing, producción y soporte tecnológico para potenciar su visión de "technology partner".</p>
+          <h3 data-translate-key="amadeusTitle">Amadeus: Impulso Creativo y Soporte Total</h3>
+          <img src="img/Amadeus1.png" alt="Amadeus" onerror="this.onerror=null;this.src='img/placeholder.png';" />
+          <p data-translate-key="amadeusDescription">Su aliado 360°. Integramos publicidad, marketing, producción y soporte tecnológico para potenciar su visión de "technology partner".</p>
         </div>
         <div class="card">
-          <h3>Aplicación Móvil Takeda: Catálogo para Ventas</h3>
-          <img src="img/Takeda.png" alt="Takeda" onerror="this.onerror=null;this.src='images/placeholder.png';" />
-          <p>Programé una aplicación móvil para la fuerza de ventas de Takeda. Esta herramienta digital centraliza el catálogo completo de medicamentos, proporcionando a los vendedores acceso instantáneo a detalles como la fórmula, indicaciones terapéuticas y resultados de estudios clínicos, optimizando su labor en campo.</p>
+            <h3 data-translate-key="takedaTitle">Aplicación Móvil Takeda: Catálogo para Ventas</h3>
+            <img src="img/Takeda.png" alt="Takeda" onerror="this.onerror=null;this.src='img/placeholder.png';" />
+            <p data-translate-key="takedaDescription">Programé una aplicación móvil para la fuerza de ventas de Takeda. Esta herramienta digital centraliza el catálogo completo de medicamentos, proporcionando a los vendedores acceso instantáneo a detalles como la fórmula, indicaciones terapéuticas y resultados de estudios clínicos, optimizando su labor en campo.</p>
         </div>
       </div>
       <div class="column-wrapper">
         <div class="card">
-          <h3>Aplicación Móvil CONDUSEF: Quejas Unificadas</h3>
-          <img src="img/Condusef.png" alt="CONDUSEF" onerror="this.onerror=null;this.src='images/placeholder.png';" />
-          <p>Para la Comisión Nacional para la Protección y Defensa de los Usuarios de Servicios Financieros (CONDUSEF), desarrollé una aplicación móvil que consolida cuatro sistemas de gestión de quejas en una sola plataforma intuitiva. Este proyecto simplifica el proceso para que los usuarios levanten todo tipo de quejas desde su dispositivo móvil.</p>
+            <h3 data-translate-key="condusefTitle">Aplicación Móvil CONDUSEF: Quejas Unificadas</h3>
+            <img src="img/Condusef.png" alt="CONDUSEF" onerror="this.onerror=null;this.src='img/placeholder.png';" />
+            <p data-translate-key="condusefDescription">Para la Comisión Nacional para la Protección y Defensa de los Usuarios de Servicios Financieros (CONDUSEF), desarrollé una aplicación móvil que consolida cuatro sistemas de gestión de quejas en una sola plataforma intuitiva. Este proyecto simplifica el proceso para que los usuarios levanten todo tipo de quejas desde su dispositivo móvil.</p>
         </div>
         <div class="card">
-          <img src="img/libros.jpg" alt="Grupo Bimbo" onerror="this.onerror=null;this.src='images/placeholder.png';" />
+          <img src="img/libros.jpg" alt="Grupo Bimbo" onerror="this.onerror=null;this.src='img/placeholder.png';" />
         </div>
         <div class="card">
-          <h3>Diseño Editorial: "La revista Doritos" (Sabritas)</h3>
-          <img src="img/Sabritas.png" alt="Revista Doritos" onerror="this.onerror=null;this.src='images/placeholder.png';" />
-          <p>Tuve a mi cargo el diseño de "La revista Doritos", una publicación interna para Sabritas. Esta revista fue un canal esencial de comunicación, informando al personal sobre noticias de la empresa, novedades de producto, comunicados y ofreciendo contenido ameno para su distracción y entretenimiento.</p>
+          <h3 data-translate-key="revistaDoritosTitle">Diseño Editorial: "La revista Doritos" (Sabritas)</h3>
+          <img src="img/Sabritas.png" alt="Revista Doritos" onerror="this.onerror=null;this.src='img/placeholder.png';" />
+          <p data-translate-key="revistaDoritosDescription">Tuve a mi cargo el diseño de "La revista Doritos", una publicación interna para Sabritas. Esta revista fue un canal esencial de comunicación, informando al personal sobre noticias de la empresa, novedades de producto, comunicados y ofreciendo contenido ameno para su distracción y entretenimiento.</p>
         </div>
         <div class="card">
-          <h3>Desarrollo de Plataforma Educativa - Editorial Santillana</h3>
-          <img src="img/Santillana.png" alt="Santillana" onerror="this.onerror=null;this.src='images/placeholder.png';" />
-          <p>Colaboré en el desarrollo de la plataforma de educación primaria de Editorial Santillana. Fui responsable de definir la propuesta de arte y visual, y trabajé en la implementación técnica como parte del equipo de programación frontend</p>
+          <h3 data-translate-key="santillanaTitle">Desarrollo de Plataforma Educativa - Editorial Santillana</h3>
+          <img src="img/Santillana.png" alt="Santillana" onerror="this.onerror=null;this.src='img/placeholder.png';" />
+          <p data-translate-key="santillanaDescription">Colaboré en el desarrollo de la plataforma de educación primaria de Editorial Santillana. Fui responsable de definir la propuesta de arte y visual, y trabajé en la implementación técnica como parte del equipo de programación frontend</p>
         </div>
       </div>
     </section>
   </main>
-  <script defer type="text/javascript" src="js/main.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
