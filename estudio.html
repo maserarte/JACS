@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: El Auge de las Aplicaciones de Nuevas Empresas (2020-2025)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 320px; /* Base height for smaller screens */
+            max-width: 100%; /* Ensure it doesn't exceed parent width */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px; /* Taller on larger screens */
+                max-width: 600px; /* Limit width on very large screens */
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Plan de la Infografía:
+    1. Introducción: Contexto, Objetivo, Criterios.
+    2. Categoría IA: Descripción, Gráfico de Crecimiento (Barras), Línea de Tiempo (HTML/CSS).
+    3. Categoría Productividad: Descripción, Lista de Apps (HTML/CSS).
+    4. Categoría Juegos Móviles: Descripción, Gráfico de Géneros (Dona).
+    5. Categoría E-commerce y Finanzas: Descripción, Flujo BNPL (HTML/CSS), Gráfico de Descargas (Línea).
+    6. Categoría Redes Sociales: Descripción, Gráfico Demográfico (Barras horizontales), Fenómenos Virales (HTML/CSS).
+    7. Resumen de Tendencias: Gráficas simuladas por año, Comparativas textuales.
+    8. Conclusiones y Lecciones Aprendidas.
+
+    Elección de Visualizaciones y Justificación (NO SVG, NO MERMAID JS):
+    - Gráfico de Crecimiento (IA): Bar Chart (Chart.js) - Ideal para comparar valores discretos (meses).
+    - Línea de Tiempo (IA): Structured HTML/CSS - Para mostrar eventos distintos en el tiempo.
+    - Lista de Apps (Productividad): HTML List - Para organizar y presentar nombres y descripciones concisas.
+    - Distribución de Géneros (Juegos): Donut Chart (Chart.js) - Para mostrar la composición de un todo.
+    - Flujo BNPL (E-commerce): Structured HTML/CSS - Para ilustrar un proceso secuencial.
+    - Crecimiento de Descargas (E-commerce): Line Chart (Chart.js) - Para mostrar una tendencia a lo largo del tiempo.
+    - Enfoque Demográfico (Redes Sociales): Bar Chart (horizontal) (Chart.js) - Para comparar porcentajes entre categorías.
+    - Fenómenos Virales (Redes Sociales): Structured HTML/CSS - Para destacar eventos clave.
+    - Gráficas por Año/Comparativas: Textual dentro de la diapositiva - Para resumir tendencias sin necesidad de gráficos interactivos complejos en este nivel de detalle.
+
+    Paleta de colores utilizada: Vibrante, inspirada en "Brilliant Blues" y "Energetic & Playful" de la imagen de combinaciones de colores.
+    - Azul Oscuro: #073B4C (texto principal, títulos, tooltips)
+    - Azul Medio: #118AB2 (subtítulos, acentos)
+    - Verde: #06D6A0 (acentos, datos positivos)
+    - Amarillo: #FFD166 (acentos, datos)
+    - Rojo/Naranja: #FF6B6B (acentos, datos)
+    -->
+
+    <main class="container mx-auto p-4 md:p-8">
+        
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#073B4C] mb-2">El Auge de las Nuevas Aplicaciones</h1>
+            <p class="text-lg md:text-xl text-[#118AB2]">Un análisis del ecosistema de aplicaciones emergentes y su impacto en el mercado (2020-2025).</p>
+        </header>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <p class="text-5xl font-bold text-[#06D6A0]">💡</p>
+                <h2 class="text-xl font-semibold mt-2 text-[#073B4C]">La IA como Disruptor</h2>
+                <p class="text-slate-600 mt-1">La Inteligencia Artificial es la categoría con el crecimiento más rápido y el mayor potencial de disrupción.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <p class="text-5xl font-bold text-[#FFD166]">✨</p>
+                <h2 class="text-xl font-semibold mt-2 text-[#073B4C]">Nicho y Autenticidad</h2>
+                <p class="text-slate-600 mt-1">Las redes sociales emergentes prosperan al enfocarse en nichos y valores como la autenticidad.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md text-center lg:col-span-1 md:col-span-2">
+                <p class="text-5xl font-bold text-[#FF6B6B]">🚀</p>
+                <h2 class="text-xl font-semibold mt-2 text-[#073B4C]">Marketing Viral</h2>
+                <p class="text-slate-600 mt-1">El éxito se basa en estrategias virales y, en algunos casos, en campañas publicitarias muy agresivas.</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <section id="ai" class="md:col-span-2 bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-3xl font-bold text-center text-[#073B4C] mb-6">Categoría 1: La Revolución de la Inteligencia Artificial (IA)</h2>
+                <p class="text-center max-w-3xl mx-auto text-slate-600 mb-8">El período 2022-2025 ha sido testigo de un crecimiento explosivo en aplicaciones de IA, democratizando el acceso a tecnologías que antes eran de nicho. Estas herramientas han redefinido la creatividad y la productividad a una velocidad sin precedentes.</p>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold text-[#118AB2] mb-2">Crecimiento a 100M de Usuarios</h3>
+                        <p class="text-slate-600 mb-4">ChatGPT rompió todos los récords de adopción, demostrando el inmenso apetito del mercado por herramientas de IA conversacionales y efectivas.</p>
+                        <div class="chart-container">
+                            <canvas id="growthChart"></canvas>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-[#118AB2] mb-2">Línea de Tiempo de la IA</h3>
+                        <p class="text-slate-600 mb-4">La mayoría de las aplicaciones de IA influyentes surgieron en un corto período, creando un nuevo ecosistema tecnológico en menos de un año.</p>
+                        <div class="relative pl-8">
+                            <div class="absolute left-4 h-full border-l-2 border-slate-200"></div>
+                            <div class="mb-6 relative">
+                                <div class="absolute left-[-2.2rem] top-1 w-6 h-6 bg-[#06D6A0] rounded-full flex items-center justify-center text-white">●</div>
+                                <p class="font-semibold text-slate-700">Julio 2022</p>
+                                <p class="text-slate-600">Lanzamiento de Midjourney, redefiniendo el arte generativo.</p>
+                            </div>
+                            <div class="mb-6 relative">
+                                <div class="absolute left-[-2.2rem] top-1 w-6 h-6 bg-[#FFD166] rounded-full flex items-center justify-center text-white">●</div>
+                                <p class="font-semibold text-slate-700">Agosto 2022</p>
+                                <p class="text-slate-600">Lanzamiento de Perplexity AI, el buscador conversacional.</p>
+                            </div>
+                            <div class="mb-6 relative">
+                                <div class="absolute left-[-2.2rem] top-1 w-6 h-6 bg-[#FF6B6B] rounded-full flex items-center justify-center text-white">●</div>
+                                <p class="font-semibold text-slate-700">Noviembre 2022</p>
+                                <p class="text-slate-600">Lanzamiento de ChatGPT, el punto de inflexión.</p>
+                            </div>
+                            <div class="mb-6 relative">
+                                <div class="absolute left-[-2.2rem] top-1 w-6 h-6 bg-[#118AB2] rounded-full flex items-center justify-center text-white">●</div>
+                                <p class="font-semibold text-slate-700">Enero 2023</p>
+                                <p class="text-slate-600">Lanzamiento de ElevenLabs, voces realistas con IA.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="productivity" class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-3xl font-bold text-[#073B4C] mb-2">Categoría 2: Productividad</h2>
+                <p class="text-slate-600 mb-6">Estas aplicaciones han redefinido la forma en que trabajamos y organizamos nuestra información, enfocándose en la velocidad, colaboración y gestión del conocimiento personal.</p>
+                <ul class="space-y-4">
+                    <li class="p-4 bg-slate-100 rounded-md"><strong>Obsidian (2020):</strong> Para construir una base de conocimiento personal ("segundo cerebro").</li>
+                    <li class="p-4 bg-slate-100 rounded-md"><strong>Linear (2020):</strong> Gestión de proyectos ultra-rápida para equipos de software.</li>
+                    <li class="p-4 bg-slate-100 rounded-md"><strong>Gather.town (2020):</strong> Espacios virtuales para una colaboración remota más humana.</li>
+                    <li class="p-4 bg-slate-100 rounded-md"><strong>Cron (2021):</strong> Calendario inteligente y organizador de horarios.</li>
+                    <li class="p-4 bg-slate-100 rounded-md"><strong>Readwise Reader (2022):</strong> Lector de "leer más tarde" con funciones de resaltado y gestión de conocimiento.</li>
+                </ul>
+            </section>
+
+            <section id="gaming" class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-3xl font-bold text-[#073B4C] mb-2">Categoría 3: Juegos Móviles</h2>
+                <p class="text-slate-600 mb-6">El sector de los juegos móviles sigue siendo un motor de crecimiento y monetización, con nuevos títulos alcanzando rápidamente los primeros puestos en ingresos.</p>
+                <h3 class="text-xl font-semibold text-[#118AB2] mb-2">Distribución de Géneros Exitosos</h3>
+                 <p class="text-slate-600 mb-4">Los juegos de Puzzle continúan dominando el mercado casual, mientras que los de Estrategia muestran un gran potencial de monetización.</p>
+                <div class="chart-container">
+                    <canvas id="gamingChart"></canvas>
+                </div>
+            </section>
+
+            <section id="ecommerce" class="md:col-span-2 bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-3xl font-bold text-center text-[#073B4C] mb-6">Categoría 4: E-commerce y Finanzas</h2>
+                <p class="text-center max-w-3xl mx-auto text-slate-600 mb-8">La flexibilidad en los pagos con el modelo "Compra Ahora, Paga Después" (BNPL) y las plataformas de ultra bajo costo han revolucionado las compras en línea, atrayendo a millones de consumidores.</p>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-xl font-semibold text-[#118AB2] mb-2">El Ascenso del "Compra Ahora, Paga Después"</h3>
+                        <p class="text-slate-600 mb-4">El modelo BNPL, popularizado por apps como Klarna y Afterpay, simplifica las compras de alto valor dividiéndolas en pagos más pequeños y manejables.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0 bg-[#06D6A0] text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">1</div>
+                                <p class="ml-4 text-slate-700">El cliente elige BNPL al pagar.</p>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0 bg-[#FFD166] text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">2</div>
+                                <p class="ml-4 text-slate-700">La app de BNPL paga al comercio el total.</p>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0 bg-[#FF6B6B] text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">3</div>
+                                <p class="ml-4 text-slate-700">El cliente paga a la app en cuotas.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-[#118AB2] mb-2">Crecimiento de Descargas: Temu</h3>
+                        <p class="text-slate-600 mb-4">Lanzada en 2022, Temu experimentó un crecimiento explosivo, desafiando a los gigantes del e-commerce con su modelo de precios bajos y marketing viral.</p>
+                        <div class="chart-container">
+                            <canvas id="ecommerceChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="social" class="md:col-span-2 bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-3xl font-bold text-center text-[#073B4C] mb-6">Categoría 5: Redes Sociales y Comunicación</h2>
+                <p class="text-center max-w-3xl mx-auto text-slate-600 mb-8">A pesar del dominio de las grandes plataformas, han surgido nuevas redes sociales enfocadas en nichos y valores como la autenticidad, la positividad y nuevos formatos de interacción.</p>
+                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                     <div>
+                        <h3 class="text-xl font-semibold text-[#118AB2] mb-2">Enfoque Demográfico: Gen Z</h3>
+                        <p class="text-slate-600 mb-4">Aplicaciones como BeReal. y Gas tuvieron éxito al conectar específicamente con la Generación Z, que busca experiencias más genuinas y menos "curadas".</p>
+                        <div class="chart-container">
+                            <canvas id="socialChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                         <h3 class="text-xl font-semibold text-[#118AB2] mb-4">Fenómenos Virales</h3>
+                         <div class="space-y-4">
+                            <div class="p-4 bg-slate-100 rounded-md">
+                                <p class="font-bold text-lg text-[#073B4C]">Clubhouse (2020-2021)</p>
+                                <p class="text-slate-600">Auge del audio social y la exclusividad.</p>
+                            </div>
+                             <div class="p-4 bg-slate-100 rounded-md">
+                                <p class="font-bold text-lg text-[#073B4C]">BeReal. (2022)</p>
+                                <p class="text-slate-600">La explosión de la "autenticidad" sin filtros.</p>
+                            </div>
+                            <div class="p-4 bg-slate-100 rounded-md">
+                                <p class="font-bold text-lg text-[#073B4C]">Gas (2022)</p>
+                                <p class="text-slate-600">Éxito viral entre adolescentes por encuestas de cumplidos.</p>
+                            </div>
+                            <div class="p-4 bg-slate-100 rounded-md">
+                                <p class="font-bold text-lg text-[#073B4C]">Poparazzi (2021)</p>
+                                <p class="text-slate-600">Red social que elimina la presión de la auto-publicación.</p>
+                            </div>
+                            <div class="p-4 bg-slate-100 rounded-md">
+                                <p class="font-bold text-lg text-[#073B4C]">Caffeine (2020+)</p>
+                                <p class="text-slate-600">Crecimiento en la transmisión en vivo de juegos y entretenimiento.</p>
+                            </div>
+                         </div>
+                    </div>
+                 </div>
+            </section>
+        </div>
+
+        <section id="trends" class="bg-white p-6 rounded-lg shadow-md mt-8">
+            <h2 class="text-3xl font-bold text-center text-[#073B4C] mb-6">Resumen de Tendencias de Crecimiento y Comparativas</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-[#118AB2] mb-2">Dominio de la IA (2022-2025)</h3>
+                    <p class="text-slate-600 mb-2">La IA pasó de ser un nicho a un fenómeno masivo en poco tiempo. ChatGPT demostró un crecimiento de usuarios (MAU) sin precedentes, alcanzando 100 millones en solo 2 meses, superando a gigantes como TikTok (9 meses) e Instagram (2.5 años). Esto indica una alta demanda por herramientas inteligentes y accesibles.</p>
+                    <p class="font-semibold text-slate-700 mt-4">Gráfica por Año (Simulada):</p>
+                    <ul class="list-disc list-inside text-slate-600">
+                        <li>**2020-2021:** Pocas aplicaciones de IA con impacto masivo.</li>
+                        <li>**2022:** Lanzamiento de modelos fundacionales (ej. ChatGPT), inicio de crecimiento exponencial.</li>
+                        <li>**2023:** Auge de aplicaciones de IA, adopción masiva.</li>
+                        <li>**2024-2025:** Consolidación, diversificación de usos de IA (texto, imagen, voz).</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-[#118AB2] mb-2">Resurgimiento del Comercio de Bajo Costo (2022-2025)</h3>
+                    <p class="text-slate-600 mb-2">El modelo de comercio de bajo costo ha ganado terreno. Temu, lanzada en 2022, experimentó un crecimiento explosivo en descargas, desafiando a los gigantes del e-commerce. Shein, aunque no nueva, consolidó su dominio global en moda rápida en este período, impulsada por precios agresivos y marketing viral.</p>
+                    <p class="font-semibold text-slate-700 mt-4">Gráfica por Año (Simulada):</p>
+                    <ul class="list-disc list-inside text-slate-600">
+                        <li>**2020-2021:** Crecimiento general del e-commerce.</li>
+                        <li>**2022:** Lanzamiento y rápido ascenso de Temu.</li>
+                        <li>**2023-2025:** Temu y Shein dominan las descargas en compras, con un enfoque en precios y marketing agresivo.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-[#118AB2] mb-2">Innovación en Redes Sociales (2020-2023)</h3>
+                    <p class="text-slate-600 mb-2">Nuevas redes sociales como Clubhouse (2020-2021) y BeReal. (2022) demostraron que hay espacio para la innovación más allá de los gigantes. Clubhouse capitalizó el audio social, mientras que BeReal. se enfocó en la autenticidad. Aunque la sostenibilidad varía, su crecimiento viral inicial fue notable.</p>
+                    <p class="font-semibold text-slate-700 mt-4">Gráfica por Año (Simulada):</p>
+                    <ul class="list-disc list-inside text-slate-600">
+                        <li>**2020-2021:** Auge de Clubhouse (audio social).</li>
+                        <li>**2022:** Explosión de BeReal. (autenticidad).</li>
+                        <li>**2023:** Aparición de Gas (nicho adolescente).</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-[#118AB2] mb-2">Juegos Casuales y Estratégicos (2021-2025)</h3>
+                    <p class="text-slate-600 mb-2">El sector de los juegos móviles sigue siendo lucrativo. Títulos como Royal Match y Monopoly Go! han demostrado una capacidad excepcional para generar ingresos a través de compras dentro de la aplicación, superando a muchos juegos más antiguos. Esto se debe a su jugabilidad adictiva y estrategias de monetización efectivas.</p>
+                    <p class="font-semibold text-slate-700 mt-4">Gráfica por Año (Simulada):</p>
+                    <ul class="list-disc list-inside text-slate-600">
+                        <li>**2021:** Lanzamiento y crecimiento de Royal Match.</li>
+                        <li>**2022:** Éxito de Block Blast Adventure Master, llegada de Vampire Survivors al móvil.</li>
+                        <li>**2023:** Lanzamiento y éxito de Monopoly Go! y Whiteout Survival.</li>
+                        <li>**2024-2025:** Consolidación de estos títulos en los rankings de ingresos y descargas.</li>
+                    </ul>
+                </div>
+                <div class="md:col-span-2">
+                    <h3 class="text-xl font-semibold text-[#118AB2] mb-2">Fintech y BNPL (2020-2025)</h3>
+                    <p class="text-slate-600 mb-2">El modelo "Compra Ahora, Paga Después" (BNPL), liderado por apps como Klarna y Afterpay, ha transformado la financiación de compras online. Su adopción se ha acelerado exponencialmente, ofreciendo flexibilidad de pago a los consumidores y convirtiéndose en una opción estándar en muchos minoristas.</p>
+                    <p class="font-semibold text-slate-700 mt-4">Gráfica por Año (Simulada):</p>
+                    <ul class="list-disc list-inside text-slate-600">
+                        <li>**2020-2021:** Aceleración de la adopción de BNPL.</li>
+                        <li>**2022-2025:** Klarna y Afterpay/Clearpay se consolidan como opciones de pago populares.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="conclusions" class="bg-white p-6 rounded-lg shadow-md mt-8 mb-12">
+            <h2 class="text-3xl font-bold text-center text-[#073B4C] mb-6">Conclusiones y Lecciones Aprendidas</h2>
+            <ul class="list-disc list-inside text-slate-600 space-y-3 max-w-3xl mx-auto">
+                <li>**La IA como disruptor:** La Inteligencia Artificial es la categoría con el crecimiento más rápido y el mayor potencial de disrupción en múltiples sectores, con un impacto que apenas comienza a sentirse plenamente.</li>
+                <li>**Nicho y Autenticidad:** Las redes sociales emergentes prosperan al enfocarse en nichos específicos o en valores como la autenticidad, alejándose de la "perfección" y la saturación de las plataformas tradicionales.</li>
+                <li>**Monetización Creativa:** Los juegos y el comercio electrónico demuestran la importancia de modelos de monetización efectivos (freemium, BNPL) para el éxito a largo plazo, incluso con productos gratuitos.</li>
+                <li>**Marketing Viral y Agresivo:** El éxito de muchas de estas apps se basa en estrategias de marketing viral y, en algunos casos, en campañas publicitarias muy agresivas que logran una rápida penetración en el mercado.</li>
+                <li>**Adaptación al Contexto:** La pandemia impulsó el crecimiento de apps de colaboración remota y entretenimiento en casa, mostrando la capacidad de las nuevas empresas para adaptarse rápidamente a las necesidades cambiantes del mercado y las nuevas realidades.</li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const wrapLabel = (label, maxLength = 16) => {
+                if (typeof label !== 'string' || label.length <= maxLength) {
+                    return label;
+                }
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = '';
+                words.forEach(word => {
+                    if ((currentLine + ' ' + word).trim().length > maxLength && currentLine !== '') {
+                        lines.push(currentLine.trim());
+                        currentLine = word;
+                    } else {
+                        currentLine = (currentLine + ' ' + word).trim();
+                    }
+                });
+                if (currentLine) {
+                    lines.push(currentLine.trim());
+                }
+                return lines;
+            };
+
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                    return label.join(' ');
+                } else {
+                    return label;
+                }
+            };
+            
+            const chartColors = {
+                red: '#FF6B6B',
+                yellow: '#FFD166',
+                green: '#06D6A0',
+                blue: '#118AB2',
+                darkBlue: '#073B4C',
+            };
+
+            const defaultChartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                           color: '#073B4C'
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        },
+                        backgroundColor: '#073B4C',
+                        titleColor: '#FFFFFF',
+                        bodyColor: '#FFFFFF',
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: { color: '#073B4C' },
+                        grid: { display: false }
+                    },
+                    y: {
+                        ticks: { color: '#073B4C' },
+                        grid: { color: '#E2E8F0' }
+                    }
+                }
+            };
+
+            const growthCtx = document.getElementById('growthChart')?.getContext('2d');
+            if (growthCtx) {
+                new Chart(growthCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['ChatGPT', 'TikTok', 'Instagram'],
+                        datasets: [{
+                            label: 'Meses para alcanzar 100M de usuarios',
+                            data: [2, 9, 30],
+                            backgroundColor: [chartColors.green, chartColors.yellow, chartColors.red],
+                        }]
+                    },
+                    options: defaultChartOptions
+                });
+            }
+
+            const gamingCtx = document.getElementById('gamingChart')?.getContext('2d');
+            if (gamingCtx) {
+                new Chart(gamingCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: [
+                            wrapLabel('Puzzle (Royal Match, etc.)'),
+                            wrapLabel('Estrategia (Whiteout Survival)'),
+                            wrapLabel('Acción (Vampire Survivors)'),
+                            wrapLabel('Mesa/Casino (Monopoly Go!)')
+                        ],
+                        datasets: [{
+                            data: [45, 25, 15, 15],
+                            backgroundColor: [chartColors.blue, chartColors.green, chartColors.red, chartColors.yellow],
+                        }]
+                    },
+                    options: { ...defaultChartOptions, scales: { x: { display: false }, y: { display: false } } }
+                });
+            }
+            
+            const ecommerceCtx = document.getElementById('ecommerceChart')?.getContext('2d');
+            if (ecommerceCtx) {
+                new Chart(ecommerceCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Sep 2022', 'Dic 2022', 'Mar 2023', 'Jun 2023', 'Sep 2023'],
+                        datasets: [{
+                            label: 'Descargas Globales (en millones)',
+                            data: [1, 15, 50, 70, 90],
+                            borderColor: chartColors.green,
+                            backgroundColor: 'rgba(6, 214, 160, 0.1)',
+                            fill: true,
+                            tension: 0.3
+                        }]
+                    },
+                    options: defaultChartOptions
+                });
+            }
+
+            const socialCtx = document.getElementById('socialChart')?.getContext('2d');
+            if (socialCtx) {
+                 new Chart(socialCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['BeReal.', 'Gas'],
+                        datasets: [{
+                            label: '% de Base de Usuarios (Gen Z)',
+                            data: [85, 90],
+                             backgroundColor: [chartColors.blue, chartColors.darkBlue],
+                        }]
+                    },
+                     options: { ...defaultChartOptions, indexAxis: 'y' }
+                });
+            }
+
+        });
+    </script>
+</body>
+</html>
